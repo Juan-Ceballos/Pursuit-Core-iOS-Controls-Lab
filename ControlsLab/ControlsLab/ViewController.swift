@@ -32,7 +32,21 @@ class ViewController: UIViewController {
     var value: Int = 7  {
         didSet  {
             for value in collectionValue    {
+                if self.value == 1  {
+                    value.text = "A"
+                }
+                else if self.value == 11    {
+                    value.text = "J"
+                }
+                else if self.value == 12    {
+                    value.text = "Q"
+                }
+                else if self.value == 13    {
+                    value.text = "K"
+                }
+                else    {
                 value.text = "\(Int(stepperControl.value))"
+                }
             }
         }
     }
@@ -44,8 +58,8 @@ class ViewController: UIViewController {
     }
     
     func configureStepper() {
-        stepperControl.minimumValue = 2
-        stepperControl.maximumValue = 10
+        stepperControl.minimumValue = 1
+        stepperControl.maximumValue = 13
         stepperControl.stepValue = 1
         
         stepperControl.value = 7
